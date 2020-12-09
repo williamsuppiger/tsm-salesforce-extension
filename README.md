@@ -1,4 +1,4 @@
-# Tsm Salesforce Extension
+# TSM Salesforce Extension
 Data Entry extension for TSM Immigration Law Salesforce form data entry.
 Compatable with:
 - Microsoft Edge
