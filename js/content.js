@@ -22,9 +22,9 @@ chrome.runtime.onMessage.addListener(function (msg) {
       $('textarea.slds-textarea:first').val(question);
       $('textarea.slds-textarea:first')[0].dispatchEvent(new Event('input', { bubbles: true }));
       if (required != "") {
-        $("input[type='checkbox']:not(:disabled):first").click();
+        $('input:not(:disabled)[name=Required__c]')[0].click();
       }
-
+      
       // update and store values
       sortOrder += 1;
       chrome.storage.sync.set({
