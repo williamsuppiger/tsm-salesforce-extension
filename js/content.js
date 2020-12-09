@@ -14,11 +14,11 @@ chrome.runtime.onMessage.addListener(function (msg) {
       const question = questions.shift();
       const required = requiredFields.shift();
 
-      //update values of fields
-      $('input:not(:disabled):eq(3)').val(api)
-      $('input:not(:disabled):eq(3)')[0].dispatchEvent(new Event('change', { bubbles: true }));
-      $('input[inputmode="decimal"]:not(:disabled)').val(sortOrder);
-      $('input[inputmode="decimal"]:not(:disabled)')[0].dispatchEvent(new Event('change', { bubbles: true }));
+      //update values of fields and trigger changes
+      $('input:not(:disabled)[name=Field_API_Name__c]').val(api)
+      $('input:not(:disabled)[name=Field_API_Name__c]')[0].dispatchEvent(new Event('change', { bubbles: true }));
+      $('input:not(:disabled)[name=Sort_Order__c]').val(sortOrder);
+      $('input:not(:disabled)[name=Sort_Order__c]')[0].dispatchEvent(new Event('change', { bubbles: true }));
       $('textarea.slds-textarea:first').val(question);
       $('textarea.slds-textarea:first')[0].dispatchEvent(new Event('input', { bubbles: true }));
       if (required != "") {
