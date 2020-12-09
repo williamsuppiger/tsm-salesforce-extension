@@ -1,0 +1,36 @@
+<html>
+
+<body>
+
+  <head>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+  </head>
+  <style>
+    textarea {
+      white-space: nowrap;
+    }
+
+    textarea#bug-textarea,
+    textarea#bug-textarea:focus {
+      outline: none !important;
+      border: none;
+      resize: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      background-color: transparent;
+    }
+  </style>
+  <textarea id="api-names" name="api-names" rows="5" cols="50" placeholder="API Names List"></textarea>
+  <textarea id="questions" name="questions" rows="5" cols="50" placeholder="Questions List"></textarea>
+  <textarea id="requiredFields" name="requiredFields" rows="5" cols="50" placeholder="Required List"></textarea>
+  <button id="send">Set Questionnaire Info</button>
+  <button id="reset-sort">Reset sort order for questions</button>
+  <br>
+  <span>NOTE: refresh/change page after either of the buttons are pressed for new values.</span>
+  <!-- hidden text area for chromium bug: https://bugs.chromium.org/p/chromium/issues/detail?id=971701 -->
+  <textarea id="bug-textarea" name="bug-textarea" rows="5" cols="50" disabled></textarea>
+  <script src="/js/popup.js"></script>
+</body>
+
+</html>

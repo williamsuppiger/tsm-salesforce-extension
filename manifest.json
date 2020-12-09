@@ -1,0 +1,55 @@
+{
+  "manifest_version": 2,
+  "name": "TSM Extension",
+  "author": "William Suppiger",
+  "version": "1.0",
+  "description": "Description",
+  "permissions": [
+    "*://tsmimmigration.lightning.force.com/*",
+    "tabs",
+    "storage"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "40": "images/logo40.png",
+      "256": "images/logo.png"
+    },
+    "default_title": "TSM Extension",
+    "default_popup": "html/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://tsmimmigration.lightning.force.com/*"
+      ],
+      "js": [
+        "js/jquery-3.4.1.min.js",
+        "js/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/jquery-3.4.1.min.js",
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "commands": {
+    "toggle-autoload-info": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A",
+        "mac": "Command+Shift+A"
+      },
+      "description": "Autoloads info into Salesforce"
+    },
+    "click-next-button": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Clicks next in Salesforce"
+    }
+  }
+}
