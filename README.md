@@ -6,10 +6,10 @@ Compatable with:
 - any Chromium browser
 ### Commands
 ##### Windows:
-- `Ctrl+Shift+A`: Autoloads info into Salesforce
+- `Ctrl+Shift+A`: Autoloads info into Salesforce form
 - `Ctrl+Shift+L`: Clicks save and next in Salesforce
 ##### Mac:
-- `Command+Shift+A`: Autoloads info into Salesforce
+- `Command+Shift+A`: Autoloads info into Salesforce form
 - `Command+Shift+L`: Clicks save and next in Salesforce
 ### Compatable Webpages
 Loads in on any tsmimmigration.lightning.force.com webpage.
