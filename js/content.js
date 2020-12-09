@@ -15,9 +15,12 @@ chrome.runtime.onMessage.addListener(function (msg) {
       const required = requiredFields.shift();
 
       //update values of fields
-      $('input:not(:disabled):eq(3)').val(api);
+      $('input:not(:disabled):eq(3)').val(api)
+      $('input:not(:disabled):eq(3)')[0].dispatchEvent(new Event('change', { bubbles: true }));
       $('input[inputmode="decimal"]:not(:disabled)').val(sortOrder);
+      $('input[inputmode="decimal"]:not(:disabled)')[0].dispatchEvent(new Event('change', { bubbles: true }));
       $('textarea.slds-textarea:first').val(question);
+      $('textarea.slds-textarea:first')[0].dispatchEvent(new Event('input', { bubbles: true }));
       if (required != "") {
         $("input[type='checkbox']:not(:disabled):first").click();
       }

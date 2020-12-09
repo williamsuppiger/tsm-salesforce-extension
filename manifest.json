@@ -39,14 +39,14 @@
   "commands": {
     "toggle-autoload-info": {
       "suggested_key": {
-        "default": "Ctrl+Shift+A",
+        "windows": "Alt+A",
         "mac": "Command+Shift+A"
       },
       "description": "Autoloads info into Salesforce"
     },
     "click-next-button": {
       "suggested_key": {
-        "windows": "Ctrl+Shift+L",
+        "windows": "Alt+L",
         "mac": "Command+Shift+L"
       },
       "description": "Clicks next in Salesforce"
