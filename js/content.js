@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener(function (msg) {
       $('input:not(:disabled)[name=Sort_Order__c]')[0].dispatchEvent(new Event('change', { bubbles: true }));
       $('textarea.slds-textarea:first').val(question);
       $('textarea.slds-textarea:first')[0].dispatchEvent(new Event('input', { bubbles: true }));
-      if (required != "") {
+      if (required.toLowerCase() == "required") {
         $('input:not(:disabled)[name=Required__c]')[0].click();
       }
 
