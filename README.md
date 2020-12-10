@@ -8,9 +8,11 @@ Compatable with:
 ##### Windows:
 - `Alt+A`: Autoloads info into Salesforce form
 - `Alt+L`: Clicks save and next in Salesforce
+- `Alt+Space`: Closes all Question tabs in Salesforce
 ##### Mac:
 - `Command+Shift+A`: Autoloads info into Salesforce form
 - `Command+Shift+L`: Clicks save and next in Salesforce
+- `Command+Shift+Space`: Closes all Question tabs in Salesforce
 ### Compatable Webpages
 Loads in on any tsmimmigration.lightning.force.com webpage.
 ### Important Notes

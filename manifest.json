@@ -50,6 +50,13 @@
         "mac": "Command+Shift+L"
       },
       "description": "Clicks next in Salesforce"
+    },
+    "close-all-questions": {
+      "suggested_key": {
+        "windows": "Alt+Space",
+        "mac": "Command+Shift+Space"
+      },
+      "description": "Closes all Question tabs in Salesforce"
     }
   }
 }

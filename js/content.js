@@ -24,7 +24,7 @@ chrome.runtime.onMessage.addListener(function (msg) {
       if (required != "") {
         $('input:not(:disabled)[name=Required__c]')[0].click();
       }
-      
+
       // update and store values
       sortOrder += 1;
       chrome.storage.sync.set({
@@ -39,6 +39,14 @@ chrome.runtime.onMessage.addListener(function (msg) {
     else if (msg.action && (msg.action == "click-next-button")) {
       $('button[title="Save & New"]').click()
     }
+    else if (msg.action && (msg.action == "close-all-questions")) {
+      $("button[tabindex]").each(function (index) {
+        if ($(this).text().indexOf("Close QQ-") !== -1 || $(this).text().indexOf("New TSM Section Question") !== -1) {
+          this.click()
+        }
+      });
+    }
+
   }
 });
 
