@@ -6,10 +6,12 @@ Compatable with:
 - any Chromium browser
 ### Commands
 ##### Windows:
-- `Ctrl+Shift+A`: Autoloads info into Salesforce form
-- `Ctrl+Shift+L`: Clicks save and next in Salesforce
+- `Alt+A`: Autoloads info into Salesforce form
+- `Alt+L`: Clicks save and next in Salesforce
 ##### Mac:
 - `Command+Shift+A`: Autoloads info into Salesforce form
 - `Command+Shift+L`: Clicks save and next in Salesforce
 ### Compatable Webpages
 Loads in on any tsmimmigration.lightning.force.com webpage.
+### Important Notes
+- Make sure the sidebar with the list of all questionnaires is closed, and refresh page after.
