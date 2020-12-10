@@ -14,4 +14,4 @@ Compatable with:
 ### Compatable Webpages
 Loads in on any tsmimmigration.lightning.force.com webpage.
 ### Important Notes
-- Make sure the sidebar with the list of all questionnaires is closed, and refresh page after.
+- Make sure to refresh the page after loading in the extension.
