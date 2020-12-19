@@ -53,7 +53,7 @@
     },
     "close-all-questions": {
       "suggested_key": {
-        "windows": "Alt+Space",
+        "windows": "Alt+1",
         "mac": "Command+Shift+Space"
       },
       "description": "Closes all Question tabs in Salesforce"

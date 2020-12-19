@@ -8,7 +8,7 @@ Compatable with:
 ##### Windows:
 - `Alt+A`: Autoloads info into Salesforce form
 - `Alt+L`: Clicks save and next in Salesforce
-- `Alt+Space`: Closes all Question tabs in Salesforce
+- `Alt+1`: Closes all Question tabs in Salesforce
 ##### Mac:
 - `Command+Shift+A`: Autoloads info into Salesforce form
 - `Command+Shift+L`: Clicks save and next in Salesforce
