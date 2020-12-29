@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "TSM Extension",
   "author": "William Suppiger",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Description",
   "permissions": [
     "*://tsmimmigration.lightning.force.com/*",
@@ -24,8 +24,12 @@
       ],
       "js": [
         "js/jquery-3.4.1.min.js",
-        "js/content.js"
-      ],
+        "js/simulate/bililiteRange.js",
+        "js/simulate/jquery.simulate.js",
+        "js/simulate/jquery.simulate.ext.js",
+        "js/simulate/jquery.simulate.key-sequence.js",
+        "js/simulate/jquery.simulate.key-combo.js",
+        "js/content.js"],
       "run_at": "document_end"
     }
   ],
@@ -37,24 +41,31 @@
     "persistent": false
   },
   "commands": {
-    "toggle-autoload-info": {
+    "c": {
       "suggested_key": {
-        "windows": "Alt+A",
-        "mac": "Command+Shift+A"
+        "windows": "Alt+7",
+        "mac": "Command+Shift+7"
       },
-      "description": "Autoloads info into Salesforce"
+      "description": "Autoloads info for Salesforce TSM Question Page"
     },
-    "click-next-button": {
+    "junction-autoload": {
       "suggested_key": {
-        "windows": "Alt+L",
-        "mac": "Command+Shift+L"
+        "windows": "Alt+8",
+        "mac": "Command+Shift+8"
       },
-      "description": "Clicks next in Salesforce"
+      "description": "Autoloads info for Salesforce Junction Page"
+    },
+    "save-next-button": {
+      "suggested_key": {
+        "windows": "Alt+9",
+        "mac": "Command+Shift+9"
+      },
+      "description": "Clicks save and next in Salesforce"
     },
     "close-all-questions": {
       "suggested_key": {
-        "windows": "Alt+1",
-        "mac": "Command+Shift+Space"
+        "windows": "Alt+0",
+        "mac": "Command+Shift+0"
       },
       "description": "Closes all Question tabs in Salesforce"
     }
