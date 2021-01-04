@@ -24,11 +24,6 @@
       ],
       "js": [
         "js/jquery-3.4.1.min.js",
-        "js/simulate/bililiteRange.js",
-        "js/simulate/jquery.simulate.js",
-        "js/simulate/jquery.simulate.ext.js",
-        "js/simulate/jquery.simulate.key-sequence.js",
-        "js/simulate/jquery.simulate.key-combo.js",
         "js/content.js"],
       "run_at": "document_end"
     }
@@ -41,7 +36,7 @@
     "persistent": false
   },
   "commands": {
-    "c": {
+    "tsm-q-autoload": {
       "suggested_key": {
         "windows": "Alt+7",
         "mac": "Command+Shift+7"

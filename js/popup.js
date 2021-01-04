@@ -4,9 +4,8 @@
 document.getElementById("send-tsm").onclick = function () {
     chrome.storage.sync.set(
         {
-            's_qUniqueNames': document.getElementById("q-unique-names").value.split("\n"),
+            's_qNames': document.getElementById("q-unique-names").value.split("\n"),
             's_labels': document.getElementById("labels").value.split("\n"),
-            's_qNames': document.getElementById("q-names").value.split("\n"),
             's_datatypes': document.getElementById("datatypes").value.split("\n"),
             's_picklistValues': document.getElementById("picklist-values").value.split("\n"),
         }, function () {
@@ -44,7 +43,7 @@ document.getElementById("send-junction").onclick = function () {
 document.getElementById("reset-sort").onclick = function () {
     chrome.storage.sync.set(
         {
-            'sortOrder': 1
+            'j_sortOrder': 1
         }, function () {
             //notify content.js of content update
             chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
