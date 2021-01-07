@@ -33,9 +33,15 @@
     <h3>Tsm Section Question Junction Info</h3>
     <textarea id="question-names" rows="10" cols="50" placeholder="TSM Section Question Names"></textarea>
     <textarea id="required" rows="10" cols="50" placeholder="Required"></textarea>
-    <button id="send-junction">Set Info</button>
+    <button id="send-junction">Set Info and reset sort order</button>
+    <br/>
+    <br/>
+    <div style="border:1px solid;border-radius: 2px; padding:2px">
+      <input type="number" id="sort-order" placeholder="sort order value">
+      <button id="set-sort" style="float:right">Only set sort order</button>
+    </div>
   </div>
-  <button id="reset-sort">Reset sort order</button>
+  <br/>
   <button id="switch-program">switch programs</button>
     <!-- hidden text area for chromium bug: https://bugs.chromium.org/p/chromium/issues/detail?id=971701 -->
     <textarea id="bug-textarea" name="bug-textarea" rows="5" cols="50" disabled></textarea>

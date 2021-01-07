@@ -54,10 +54,10 @@ document.getElementById("send-junction").onclick = function () {
 /*
  * Resets the sort order for autoload program in content.js
  */
-document.getElementById("reset-sort").onclick = function () {
+document.getElementById("set-sort").onclick = function () {
 	chrome.storage.local.set(
 		{
-			'j_sortOrder': 1
+			'j_sortOrder': parseInt(document.getElementById("sort-order").value, 10)
 		}, function () {
 			//notify content.js of content update
 			chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
