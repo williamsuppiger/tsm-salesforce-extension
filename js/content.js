@@ -21,6 +21,12 @@ chrome.runtime.onMessage.addListener(function (msg) {
       $('button[title="Save & New"]').click();
     }
     else if (msg.action && (msg.action == "close-all-questions")) {
+      if($("li a span[title='TSM Section Question  c']").length > 0)
+      {
+        $('.close button.slds-button').each(function(){ 
+          this.click() 
+        });
+      }
       $("button[tabindex]").each(function (index) {
         if ($(this).text().indexOf("Close SQJ-") !== -1 || 
           $(this).text().indexOf("New Tsm Section Question Junction") !== -1) {
