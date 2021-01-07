@@ -41,21 +41,36 @@ chrome.runtime.onMessage.addListener(
 );
 
 function loadTSMQuestionInfo(){
+  //field inputs
+  let input_qName = $('input:not(:disabled)[name=Name]');
+  let input_qUniqueName = $('input:not(:disabled)[name=Question_Unique_Name__c]');
+  let input_label = $('textarea.slds-textarea:eq(0)');
+  let input_dataType = $("input.slds-input.slds-combobox__input:eq(1)");
+  let input_picklistValues = $('textarea.slds-textarea:eq(1)');
+
+  //validate all fields that will be used exist
+  if(!input_qName.length || !input_qUniqueName.length || !input_label.length || 
+    !input_dataType.length || !input_picklistValues.length)
+  {
+    console.log("Can not find all fields on page that are needed to input data")
+    return;
+  }
+
   // autofill questionnaire question name & unique name
   qName = items["s_qNames"].shift();
-  $('input:not(:disabled)[name=Name]').val(qName);
-  $('input:not(:disabled)[name=Question_Unique_Name__c]').val(qName)
+  input_qName.val(qName);
+  input_qUniqueName.val(qName)
   // after data updated for field, trigger changes
-  $('input:not(:disabled)[name=Name]')[0].dispatchEvent(new Event('change', { bubbles: true }));
-  $('input:not(:disabled)[name=Question_Unique_Name__c]')[0].dispatchEvent(new Event('change', { bubbles: true }));
+  input_qName[0].dispatchEvent(new Event('change', { bubbles: true }));
+  input_qUniqueName[0].dispatchEvent(new Event('change', { bubbles: true }));
 
   // autofill label
-  $('textarea.slds-textarea:eq(0)').val(items["s_labels"].shift());
-  $('textarea.slds-textarea:eq(0)')[0].dispatchEvent(new Event('input', { bubbles: true }));
+  input_label.val(items["s_labels"].shift());
+  input_label[0].dispatchEvent(new Event('input', { bubbles: true }));
 
   // more complex select for datatype picklist
   let dataType = items["s_datatypes"].shift().toLowerCase();
-  $("input.slds-input.slds-combobox__input:eq(1)").click();
+  input_dataType.click();
   //wait till data type picklist loads in
   waitForElementToDisplay("lightning-base-combobox-item",function(){
     $("lightning-base-combobox-item").each(function(index, value) {
@@ -65,8 +80,8 @@ function loadTSMQuestionInfo(){
   });},50,5000);
   //autofill picklist values if necessary
   if (dataType == "picklist") {
-    $('textarea.slds-textarea:eq(1)').val(items["s_picklistValues"].shift())
-    $('textarea.slds-textarea:eq(1)')[0].dispatchEvent(new Event('input', { bubbles: true }));
+    input_picklistValues.val(items["s_picklistValues"].shift())
+    input_picklistValues[0].dispatchEvent(new Event('input', { bubbles: true }));
   }
   else{
     // if not picklist, skip current element's picklist values
@@ -111,8 +126,6 @@ function getStorageData() {
     ready = true;
     console.log("Load Data executed");
   });
-  var channels = "";
-  var keywords = "";
 }
 
 function setStorageData(data) {
