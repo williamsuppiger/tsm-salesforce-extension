@@ -47,8 +47,8 @@ function loadTSMQuestionInfo(){
   let input_label = $('textarea.slds-textarea:eq(0)');
   let input_dataType = $("input.slds-input.slds-combobox__input:eq(1)");
   let input_picklistValues = $('textarea.slds-textarea:eq(1)');
-
-  //validate all fields that will be used exist
+  
+  //validate all fields that will be used do exist on page
   if(!input_qName.length || !input_qUniqueName.length || !input_label.length || 
     !input_dataType.length || !input_picklistValues.length)
   {
@@ -93,12 +93,22 @@ function loadTSMQuestionInfo(){
 }
 
 function loadJunctionInfo(){
+  let input_qName = $('input[lightning-basecombobox_basecombobox][required]:first');
+  let input_sortOrder = $('input:not(:disabled)[name=Sort_Order__c]');
+  let input_required = $('input:not(:disabled)[name=Required__c]');
+
+  //validate all fields that will be used do exist on page
+  if(!input_qName.length || !input_sortOrder.length || !input_required.length)
+  {
+    console.log("Can not find all fields on page that are needed to input data")
+    return;
+  }
+
   // load in TSM Section question for current record
   let TSMQuestion = items["j_qNames"].shift().toLowerCase();
-  let input = $('input[lightning-basecombobox_basecombobox][required]:first')
-  input.val(TSMQuestion);
-  input[0].dispatchEvent(new Event('input', { bubbles: true }));
-  clickUntilDisplayed(input, 'lightning-base-combobox-item', function(){
+  input_qName.val(TSMQuestion);
+  input_qName[0].dispatchEvent(new Event('input', { bubbles: true }));
+  clickUntilDisplayed(input_qName, 'lightning-base-combobox-item', function(){
     $('ul[lightning-basecombobox_basecombobox] li lightning-base-combobox-item span.slds-media__body span.slds-listbox__option-text_entity').each(function() {
       if($(this).text().toLowerCase() == TSMQuestion){
         $(this).click()
@@ -106,11 +116,11 @@ function loadJunctionInfo(){
     });
   }, 50, 5000);
 
-  $('input:not(:disabled)[name=Sort_Order__c]').val(items["j_sortOrder"]);
-  $('input:not(:disabled)[name=Sort_Order__c]')[0].dispatchEvent(new Event('change', { bubbles: true }));
+  input_sortOrder.val(items["j_sortOrder"]);
+  input_sortOrder[0].dispatchEvent(new Event('change', { bubbles: true }));
   
   if (items["j_required"].shift().toLowerCase() == "required") {
-    $('input:not(:disabled)[name=Required__c]')[0].click();
+    input_required[0].click();
   }
 
   // update and store values
