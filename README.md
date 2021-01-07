@@ -14,8 +14,9 @@ Compatable with:
 - `Command+Shift+7`: Autoloads info for Salesforce TSM Question Page
 - `Command+Shift+8`: Autoloads info for Salesforce Junction Page
 - `Command+Shift+9`: Clicks save and next in Salesforce
-- `Command+Shift+0`: Closes all Tsm Section Question & Junction Questions tabs in Salesforce
+- `Command+Shift+0`: Closes all Tsm Section Question & Junction Questions tabs in Salesforce.
 ### Compatable Webpages
 Loads in on any tsmimmigration.lightning.force.com webpage.
 ### Important Notes
 - Make sure to refresh the page after loading in the extension for the first time.
+- `Command+Shift+0` or `Alt+0` note: If you have a TSM Section Question open, it will close all tabs (even non TSM Section Question tabs).
