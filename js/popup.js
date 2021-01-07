@@ -2,7 +2,7 @@
  * Send info from tsm question section autofill program to content.js
  */
 document.getElementById("send-tsm").onclick = function () {
-    chrome.storage.sync.set(
+    chrome.storage.local.set(
         {
             's_qNames': document.getElementById("q-unique-names").value.split("\n"),
             's_labels': document.getElementById("labels").value.split("\n"),
@@ -22,7 +22,7 @@ document.getElementById("send-tsm").onclick = function () {
  * Send info from junction autofill program to content.js
  */
 document.getElementById("send-junction").onclick = function () {
-    chrome.storage.sync.set(
+    chrome.storage.local.set(
         {
             'j_qNames': document.getElementById("question-names").value.split("\n"),
             'j_required': document.getElementById("required").value.split("\n"),
@@ -41,7 +41,7 @@ document.getElementById("send-junction").onclick = function () {
  * Resets the sort order for autoload program in content.js
  */
 document.getElementById("reset-sort").onclick = function () {
-    chrome.storage.sync.set(
+    chrome.storage.local.set(
         {
             'j_sortOrder': 1
         }, function () {

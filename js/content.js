@@ -55,7 +55,7 @@ function loadTSMQuestionInfo(){
 
   // more complex select for datatype picklist
   let dataType = items["s_datatypes"].shift().toLowerCase();
-  $("input.slds-input.slds-combobox__input:last").click();
+  $("input.slds-input.slds-combobox__input:eq(1)").click();
   //wait till data type picklist loads in
   waitForElementToDisplay("lightning-base-combobox-item",function(){
     $("lightning-base-combobox-item").each(function(index, value) {
@@ -106,15 +106,17 @@ function loadJunctionInfo(){
 function getStorageData() {
   ready = false;
   // load in arrys of data
-  chrome.storage.sync.get(fields, function (storage) {
+  chrome.storage.local.get(fields, function (storage) {
     items = storage;
     ready = true;
     console.log("Load Data executed");
   });
+  var channels = "";
+  var keywords = "";
 }
 
 function setStorageData(data) {
-  chrome.storage.sync.set(
+  chrome.storage.local.set(
     data, function () {
     console.log('Questionnaire Data Saved');
   });

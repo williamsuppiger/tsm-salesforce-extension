@@ -18,4 +18,4 @@ Compatable with:
 ### Compatable Webpages
 Loads in on any tsmimmigration.lightning.force.com webpage.
 ### Important Notes
-- Make sure to refresh the page after loading in the extension.
+- Make sure to refresh the page after loading in the extension for the first time.
