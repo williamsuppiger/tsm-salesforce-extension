@@ -1,68 +1,67 @@
 {
-  "manifest_version": 2,
-  "name": "TSM Extension",
-  "author": "William Suppiger",
-  "version": "2.0",
-  "description": "Description",
-  "permissions": [
-    "https://tsmimmigration.lightning.force.com/*",
-    "tabs",
-    "storage"
-  ],
-  "browser_action": {
-    "default_icon": {
-      "40": "images/logo40.png",
-      "256": "images/logo.png"
-    },
-    "default_title": "TSM Extension",
-    "default_popup": "html/popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "*://tsmimmigration.lightning.force.com/*"
-      ],
-      "js": [
-        "js/jquery-3.4.1.min.js",
-        "js/content.js"],
-      "run_at": "document_end"
-    }
-  ],
-  "background": {
-    "scripts": [
-      "js/jquery-3.4.1.min.js",
-      "js/background.js"
+    "manifest_version": 2,
+    "name": "TSM Extension",
+    "author": "William Suppiger",
+    "version": "2.0",
+    "description": "Description",
+    "permissions": [
+        "https://tandslaw.lightning.force.com/*",
+        "tabs",
+        "storage"
     ],
-    "persistent": false
-  },
-  "commands": {
-    "tsm-q-autoload": {
-      "suggested_key": {
-        "windows": "Alt+7",
-        "mac": "Command+Shift+7"
-      },
-      "description": "Autoloads info for Salesforce TSM Question Page"
+    "browser_action": {
+        "default_icon": {
+            "40": "images/logo40.png",
+            "256": "images/logo.png"
+        },
+        "default_title": "TSM Extension",
+        "default_popup": "html/popup.html"
     },
-    "junction-autoload": {
-      "suggested_key": {
-        "windows": "Alt+8",
-        "mac": "Command+Shift+8"
-      },
-      "description": "Autoloads info for Salesforce Junction Page"
+    "content_scripts": [{
+        "matches": [
+            "*://tandslaw.lightning.force.com/*"
+        ],
+        "js": [
+            "js/jquery-3.4.1.min.js",
+            "js/content.js"
+        ],
+        "run_at": "document_end"
+    }],
+    "background": {
+        "scripts": [
+            "js/jquery-3.4.1.min.js",
+            "js/background.js"
+        ],
+        "persistent": false
     },
-    "save-next-button": {
-      "suggested_key": {
-        "windows": "Alt+9",
-        "mac": "Command+Shift+9"
-      },
-      "description": "Clicks save and next in Salesforce"
-    },
-    "close-all-questions": {
-      "suggested_key": {
-        "windows": "Alt+0",
-        "mac": "Command+Shift+0"
-      },
-      "description": "Closes all Question tabs in Salesforce"
+    "commands": {
+        "tsm-q-autoload": {
+            "suggested_key": {
+                "windows": "Alt+7",
+                "mac": "Command+Shift+7"
+            },
+            "description": "Autoloads info for Salesforce TSM Question Page"
+        },
+        "junction-autoload": {
+            "suggested_key": {
+                "windows": "Alt+8",
+                "mac": "Command+Shift+8"
+            },
+            "description": "Autoloads info for Salesforce Junction Page"
+        },
+        "save-next-button": {
+            "suggested_key": {
+                "windows": "Alt+9",
+                "mac": "Command+Shift+9"
+            },
+            "description": "Clicks save and next in Salesforce"
+        },
+        "close-all-questions": {
+            "suggested_key": {
+                "windows": "Alt+0",
+                "mac": "Command+Shift+0"
+            },
+            "description": "Closes all Question tabs in Salesforce"
+        }
     }
-  }
 }
