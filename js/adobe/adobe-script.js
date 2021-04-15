@@ -1,6 +1,6 @@
-QuestionnaireNameSwap(1)
+QuestionnaireNameIncrease(1)
 
-function QuestionnaireNameSwap(increase) {
+function QuestionnaireNameIncrease(increase) {
     // first swap
     for (var i = 0; i <= 500; i++) {
         try {
